@@ -1,0 +1,182 @@
+[{
+  "_id": {
+    "$oid": "67b7ee9a9cee539e6c774405"
+  },
+  "post": {
+    "$oid": "67b6b6662c74dae4fde80ccc"
+  },
+  "author": {
+    "$oid": "67b4b1cf415abc4fbd7aaa56"
+  },
+  "content": "Me parece una noticia increíble. Gracias por compartir.",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-21T03:10:18.582Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-21T03:10:18.582Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67b7eeeb9cee539e6c774409"
+  },
+  "post": {
+    "$oid": "67b7ed069cee539e6c7743f4"
+  },
+  "author": {
+    "$oid": "67b4b1cf415abc4fbd7aaa56"
+  },
+  "content": "Yo tampoco se, si te dicen algo importante me dices porfa",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-21T03:11:39.276Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-21T03:11:39.276Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67b7ef159cee539e6c77440d"
+  },
+  "post": {
+    "$oid": "67b7ed519cee539e6c7743f9"
+  },
+  "author": {
+    "$oid": "67b4b1cf415abc4fbd7aaa56"
+  },
+  "content": "Te ayudo, te escribo por dm",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-21T03:12:21.859Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-21T03:12:21.859Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67b7efab9cee539e6c77441b"
+  },
+  "post": {
+    "$oid": "67b7eda69cee539e6c7743ff"
+  },
+  "author": {
+    "$oid": "67b4b218415abc4fbd7aaa5c"
+  },
+  "content": "Va caer el 28/28/28 dicen que por la noche",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-21T03:14:51.478Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-21T03:14:51.478Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67b7f202b9479010198cb631"
+  },
+  "post": {
+    "$oid": "67b7eda69cee539e6c7743ff"
+  },
+  "author": {
+    "$oid": "67b4b234415abc4fbd7aaa62"
+  },
+  "content": "Sabes a que hora caera de la noche? si ya lo confirmaron los astronomos",
+  "parentComment": {
+    "$oid": "67b7efab9cee539e6c77441b"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-21T03:24:50.655Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-21T03:52:21.783Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67b7f3b9b329fc6c8d3cbd4b"
+  },
+  "post": {
+    "$oid": "67b7eb7973a60f67da6b33c6"
+  },
+  "author": {
+    "$oid": "67b4b218415abc4fbd7aaa5c"
+  },
+  "content": "Se usa para confirmar que si al eliminar el post te salga como Post Elimado",
+  "parentComment": null,
+  "status": false,
+  "createdAt": {
+    "$date": "2025-02-21T03:32:09.183Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-21T03:49:50.853Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67b7f9b78bc829b4fe03bc6e"
+  },
+  "post": {
+    "$oid": "67b7eda69cee539e6c7743ff"
+  },
+  "author": {
+    "$oid": "67b536257ea9f33d6839c995"
+  },
+  "content": "No han confirmado nada al respecto",
+  "parentComment": {
+    "$oid": "67b7f202b9479010198cb631"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-21T03:57:43.945Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-21T03:57:43.945Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67b7fb108bc829b4fe03bc7b"
+  },
+  "post": {
+    "$oid": "67b7fa698bc829b4fe03bc77"
+  },
+  "author": {
+    "$oid": "67b4b218415abc4fbd7aaa5c"
+  },
+  "content": "Se usa para confirmar que si al eliminar el comment te salga como Comment Eliminado",
+  "parentComment": null,
+  "status": false,
+  "createdAt": {
+    "$date": "2025-02-21T04:03:28.481Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-21T04:09:18.961Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67b7fb9c8bc829b4fe03bc89"
+  },
+  "post": {
+    "$oid": "67b7fa698bc829b4fe03bc77"
+  },
+  "author": {
+    "$oid": "67b4b234415abc4fbd7aaa62"
+  },
+  "content": "Prueba de que si salga correctamente Comment Elimado",
+  "parentComment": {
+    "$oid": "67b7fb108bc829b4fe03bc7b"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-21T04:05:48.518Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-21T04:05:48.518Z"
+  }
+}]

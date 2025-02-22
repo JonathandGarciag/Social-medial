@@ -1,0 +1,165 @@
+[{
+  "_id": {
+    "$oid": "67b65ea95df44cbbb12e149e"
+  },
+  "name": "General",
+  "description": "Categoría predeterminada",
+  "isDefault": true,
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-19T22:43:53.372Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-19T22:43:53.372Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67b68b4aa95770c69ecae1d5"
+  },
+  "name": "Tecnología en computación",
+  "description": "Investigaciones y avances científicos",
+  "isDefault": false,
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-20T01:54:18.592Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-20T03:01:49.088Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67b68cc39e657a342d731927"
+  },
+  "name": "Biología",
+  "description": "Categoría sobre avances biologicos",
+  "isDefault": false,
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-20T02:00:35.408Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-20T02:00:35.408Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67b6c2a5e9e0c01b486aa361"
+  },
+  "name": "Quimica y Ciencia",
+  "description": "Investigaciones y avances Quimicos",
+  "isDefault": false,
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-20T05:50:29.035Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-21T02:55:28.594Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67b6c2c7e9e0c01b486aa365"
+  },
+  "name": "Animales",
+  "description": "Categoria sobre animales de todo tipo",
+  "isDefault": false,
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-20T05:51:03.518Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-20T05:51:03.518Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67b6c2dde9e0c01b486aa369"
+  },
+  "name": "Espacio",
+  "description": "Categoria sobre el basto espacio",
+  "isDefault": false,
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-20T05:51:25.195Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-20T05:51:25.195Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67b6c310e9e0c01b486aa371"
+  },
+  "name": "Questions",
+  "description": "Resuelve tus dudas aquí",
+  "isDefault": false,
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-20T05:52:16.998Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-20T05:52:16.998Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67b6c333e9e0c01b486aa375"
+  },
+  "name": "Juegos",
+  "description": "Juegos que te pueden atraer",
+  "isDefault": false,
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-20T05:52:51.598Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-20T05:52:51.598Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67b6c340e9e0c01b486aa379"
+  },
+  "name": "Tendencias",
+  "description": "Tendencias de ultimo momento",
+  "isDefault": false,
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-20T05:53:04.288Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-20T05:53:04.288Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67b7a87151659ca03aa413f4"
+  },
+  "name": "Delete",
+  "description": "Ejemplo del delete",
+  "isDefault": false,
+  "status": false,
+  "createdAt": {
+    "$date": "2025-02-20T22:10:57.106Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-20T22:16:01.308Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67b7eb3273a60f67da6b33c1"
+  },
+  "name": "Delete prueba",
+  "description": "Ejemplo del delete",
+  "isDefault": false,
+  "status": false,
+  "createdAt": {
+    "$date": "2025-02-21T02:55:46.441Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-21T02:57:25.477Z"
+  }
+}]

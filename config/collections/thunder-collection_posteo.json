@@ -1,0 +1,84 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "posteo",
+    "collectionId": "778bb911-0cc8-414b-9396-62bff8aed6a9",
+    "dateExported": "2025-02-21T04:32:03.472Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "4422f040-1e1d-4a67-8415-e4a5e32f7939",
+            "colId": "778bb911-0cc8-414b-9396-62bff8aed6a9",
+            "containerId": "",
+            "name": "Post Posteo",
+            "url": "http://localhost:3000/social-media/v3/posts/",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2025-02-20T03:40:24.076Z",
+            "modified": "2025-02-21T04:00:41.906Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I0YjFjZjQxNWFiYzRmYmQ3YWFhNTYiLCJpYXQiOjE3NDAxMDcxMjksImV4cCI6MTc0MDExMDcyOX0.vReuqicy--h6jgmzY1WnLRZRr5bUc5hzv2ZPDZ2EXaM"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"title\": \"God Of War\",\n    \"category\": \"Juegos\",\n    \"content\": \"Alguien sabe como se pasa esta parte del juego?\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "d4b38a6a-c1fe-44f4-bdac-9323b6a8cb41",
+            "colId": "778bb911-0cc8-414b-9396-62bff8aed6a9",
+            "containerId": "",
+            "name": "Get Posteo",
+            "url": "http://localhost:3000/social-media/v3/posts/",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2025-02-20T03:41:12.734Z",
+            "modified": "2025-02-20T05:14:20.501Z",
+            "headers": []
+        },
+        {
+            "_id": "fff8e998-ba9b-4841-b27f-413c53d299f6",
+            "colId": "778bb911-0cc8-414b-9396-62bff8aed6a9",
+            "containerId": "",
+            "name": "Delete Posteo",
+            "url": "http://localhost:3000/social-media/v3/posts/67b7eb7973a60f67da6b33c6",
+            "method": "DELETE",
+            "sortNum": 30000,
+            "created": "2025-02-20T03:41:20.886Z",
+            "modified": "2025-02-21T03:33:48.395Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I1MzYyNTdlYTlmMzNkNjgzOWM5OTUiLCJpYXQiOjE3NDAxMDg3OTMsImV4cCI6MTc0MDExMjM5M30.8FweJK3H1P1MjgQfFPOK75K2ZeOi4Ch-NkKClrlf43s"
+                }
+            ]
+        },
+        {
+            "_id": "b51551a0-880b-4d04-928c-4fa768e6d03e",
+            "colId": "778bb911-0cc8-414b-9396-62bff8aed6a9",
+            "containerId": "",
+            "name": "Put Posteo",
+            "url": "http://localhost:3000/social-media/v3/posts/67b6b6662c74dae4fde80ccc",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2025-02-20T03:41:31.546Z",
+            "modified": "2025-02-20T05:32:22.989Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I1MzYyNTdlYTlmMzNkNjgzOWM5OTUiLCJpYXQiOjE3NDAwMjcwNDgsImV4cCI6MTc0MDAzMDY0OH0.Xa4Z88LjHSWGQUM573z-knBKNQUtYzeWf7l9r8lI5Fs"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n    \"title\": \"Actualización en IA\",\r\n    \"category\": \"Tecnología en computación\",\r\n    \"content\": \"JavaScript sigue evolucionando...\"\r\n}\r\n",
+                "form": []
+            }
+        }
+    ],
+    "ref": "l0PZGpwp-h0EtyJlZQmPi-WWIroc23pEoC97yETNr1HsOAIItQ5G5VVIVoCF1dXGttpbfRRJu_OprSjqbRhg5Q"
+}

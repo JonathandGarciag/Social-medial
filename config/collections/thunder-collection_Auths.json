@@ -1,0 +1,123 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "Auths",
+    "collectionId": "e4da7316-0375-4c36-9c40-6632c22d27ca",
+    "dateExported": "2025-02-21T04:32:20.861Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "1cb8e119-2d6c-4b0c-9739-d1bab2ab6d8e",
+            "colId": "e4da7316-0375-4c36-9c40-6632c22d27ca",
+            "containerId": "",
+            "name": "Register",
+            "url": "http://localhost:3000/social-media/v3/auth/register",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2025-02-19T01:01:13.870Z",
+            "modified": "2025-02-19T01:38:45.145Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Gengar\",\n  \"username\": \"purple\",\n  \"email\": \"pgungle@gmail.com\",\n  \"password\": \"123456789\",\n  \"role\": \"USER_ROLE\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "ebcc8be6-7246-4075-bcc0-66b246097c90",
+            "colId": "e4da7316-0375-4c36-9c40-6632c22d27ca",
+            "containerId": "",
+            "name": "Login Admin",
+            "url": "http://localhost:3000/social-media/v3/auth/login",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2025-02-19T01:01:42.572Z",
+            "modified": "2025-02-20T01:01:01.142Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Jonathan Gutierrez\",\n  \"email\": \"jgarciadmin@gmail.com\",\n  \"password\": \"12345678\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "f0531221-e182-4300-8e9e-94440ebfb9e8",
+            "colId": "e4da7316-0375-4c36-9c40-6632c22d27ca",
+            "containerId": "",
+            "name": "Login",
+            "url": "http://localhost:3000/social-media/v3/auth/login",
+            "method": "POST",
+            "sortNum": 35000,
+            "created": "2025-02-19T01:25:53.564Z",
+            "modified": "2025-02-21T04:04:16.907Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Joel Ortiz\",\n  \"email\": \"null@gmail.com\",\n  \"password\": \"12345678\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "314e7e15-c815-4c57-ac12-ac68c147c47e",
+            "colId": "e4da7316-0375-4c36-9c40-6632c22d27ca",
+            "containerId": "",
+            "name": "Get",
+            "url": "http://localhost:3000/social-media/v3/user/",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2025-02-19T01:01:47.560Z",
+            "modified": "2025-02-20T01:04:22.258Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I2NjAzZjVjNTNjYmEzZDFiMmJjZTAiLCJpYXQiOjE3NDAwMTMzNzksImV4cCI6MTc0MDAxNjk3OX0.TrZdh6s1004tQoUlyyUT8i5TfytE1bprJQEsmsQks5c"
+                }
+            ]
+        },
+        {
+            "_id": "b3bd560d-227c-47ba-8996-11ff3c07565a",
+            "colId": "e4da7316-0375-4c36-9c40-6632c22d27ca",
+            "containerId": "",
+            "name": "Put Password",
+            "url": "http://localhost:3000/social-media/v3/user/password/67b536257ea9f33d6839c995",
+            "method": "PUT",
+            "sortNum": 50000,
+            "created": "2025-02-19T01:01:54.332Z",
+            "modified": "2025-02-19T21:39:25.021Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I1MzYyNTdlYTlmMzNkNjgzOWM5OTUiLCJpYXQiOjE3NDAwMDExNDMsImV4cCI6MTc0MDAwNDc0M30.qO6eQgEJ1nso8_OtIkPueNEvSSuQDD_hD2ZyyjBqnkg"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"oldPassword\": \"123456789\",\n  \"newPassword\": \"987654321\"\n}\n",
+                "form": []
+            }
+        },
+        {
+            "_id": "f5a8add6-5cb3-4f22-a64c-83f1e4429851",
+            "colId": "e4da7316-0375-4c36-9c40-6632c22d27ca",
+            "containerId": "",
+            "name": "Put ",
+            "url": "http://localhost:3000/social-media/v3/user/67b536257ea9f33d6839c995",
+            "method": "PUT",
+            "sortNum": 60000,
+            "created": "2025-02-19T01:24:46.500Z",
+            "modified": "2025-02-19T21:40:56.965Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I1MzYyNTdlYTlmMzNkNjgzOWM5OTUiLCJpYXQiOjE3NDAwMDExNDMsImV4cCI6MTc0MDAwNDc0M30.qO6eQgEJ1nso8_OtIkPueNEvSSuQDD_hD2ZyyjBqnkg"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Gengar\",\n  \"username\": \"purple\",\n  \"email\": \"pjungle@gmail.com\"\n}",
+                "form": []
+            }
+        }
+    ],
+    "ref": "WuMfituPIv4XV3391TkTOCC9ysDm3p73rEtRHkqRxOp4n2OW6J88-mCneWPYiCdI1yGoAmWKTPTqeCX-_-6scQ"
+}

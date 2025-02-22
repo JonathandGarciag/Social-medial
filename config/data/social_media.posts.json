@@ -1,0 +1,120 @@
+[{
+  "_id": {
+    "$oid": "67b6b6662c74dae4fde80ccc"
+  },
+  "title": "Actualización en IA",
+  "category": {
+    "$oid": "67b68b4aa95770c69ecae1d5"
+  },
+  "content": "JavaScript sigue evolucionando...",
+  "author": {
+    "$oid": "67b536257ea9f33d6839c995"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-20T04:58:14.105Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-20T05:32:22.953Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67b7eb7973a60f67da6b33c6"
+  },
+  "title": "Pruebas de delete",
+  "category": {
+    "$oid": "67b65ea95df44cbbb12e149e"
+  },
+  "content": "Se hizo para confirmar que al eliminar una categoria se pongo por defecto General",
+  "author": {
+    "$oid": "67b536257ea9f33d6839c995"
+  },
+  "status": false,
+  "createdAt": {
+    "$date": "2025-02-21T02:56:57.714Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-21T03:33:48.366Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67b7ed069cee539e6c7743f4"
+  },
+  "title": "Hola soy nuevo",
+  "category": {
+    "$oid": "67b6c340e9e0c01b486aa379"
+  },
+  "content": "Quiero saber como se usa esta aplicación",
+  "author": {
+    "$oid": "67b4b234415abc4fbd7aaa62"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-21T03:03:34.147Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-21T03:03:34.147Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67b7ed519cee539e6c7743f9"
+  },
+  "title": "No se cocinar",
+  "category": {
+    "$oid": "67b6c310e9e0c01b486aa371"
+  },
+  "content": "Alguien me ayuda a poder cocinar?",
+  "author": {
+    "$oid": "67b4b218415abc4fbd7aaa5c"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-21T03:04:49.113Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-21T03:04:49.113Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67b7eda69cee539e6c7743ff"
+  },
+  "title": "Meteorito",
+  "category": {
+    "$oid": "67b6c2dde9e0c01b486aa369"
+  },
+  "content": "Alguien sabe cuando va pasar el meteorito?",
+  "author": {
+    "$oid": "67b4b1cf415abc4fbd7aaa56"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-21T03:06:14.727Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-21T03:06:14.727Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67b7fa698bc829b4fe03bc77"
+  },
+  "title": "God Of War",
+  "category": {
+    "$oid": "67b6c333e9e0c01b486aa375"
+  },
+  "content": "Alguien sabe como se pasa esta parte del juego?",
+  "author": {
+    "$oid": "67b4b1cf415abc4fbd7aaa56"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-21T04:00:41.871Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-21T04:00:41.871Z"
+  }
+}]
