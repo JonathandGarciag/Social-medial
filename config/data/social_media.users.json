@@ -122,16 +122,16 @@
     "$oid": "67b536257ea9f33d6839c995"
   },
   "name": "Gengar",
-  "username": "purple",
+  "username": "purple generate",
   "email": "pjungle@gmail.com",
-  "password": "$argon2id$v=19$m=65536,t=3,p=4$Dels4iVMjY5CsaOntC9/mg$zDhhJFCKPWc3gxrPWMf5MtJfTufEGqHEr9ACGEsPxDg",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$RE11FzpLuy9zTqr4xxKm6w$4F9eUV9Zw+oophuksKx9lAY9KzOTgPJZNMoso7WLfFc",
   "role": "USER_ROLE",
   "status": true,
   "createdAt": {
     "$date": "2025-02-19T01:38:45.133Z"
   },
   "updatedAt": {
-    "$date": "2025-02-19T21:40:56.928Z"
+    "$date": "2025-02-25T21:40:05.293Z"
   }
 },
 {
@@ -149,5 +149,22 @@
   },
   "updatedAt": {
     "$date": "2025-02-19T22:50:39.344Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67be351a3c8331d94b301797"
+  },
+  "name": "Jorge",
+  "username": "Perez",
+  "email": "jperez@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$g9Dv/SZ6/7EqI4D3rODFJg$Z1oyICw+/zvATmHfhIJCA2XSMvukS1VL8yuQZMr5UXI",
+  "role": "USER_ROLE",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-25T21:24:42.087Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-25T21:24:42.087Z"
   }
 }]

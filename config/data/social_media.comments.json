@@ -179,4 +179,46 @@
   "updatedAt": {
     "$date": "2025-02-21T04:05:48.518Z"
   }
+},
+{
+  "_id": {
+    "$oid": "67be40fc3c8331d94b3017c6"
+  },
+  "post": {
+    "$oid": "67be3eaf3c8331d94b3017af"
+  },
+  "author": {
+    "$oid": "67b4b234415abc4fbd7aaa62"
+  },
+  "content": "Los actrices principales son Emma Stone y Ryan Gosling",
+  "parentComment": null,
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-25T22:15:24.112Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-25T22:16:07.839Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67be415b3c8331d94b3017ce"
+  },
+  "post": {
+    "$oid": "67be3eaf3c8331d94b3017af"
+  },
+  "author": {
+    "$oid": "67b536257ea9f33d6839c995"
+  },
+  "content": "Gracias por decirme",
+  "parentComment": {
+    "$oid": "67be40fc3c8331d94b3017c6"
+  },
+  "status": false,
+  "createdAt": {
+    "$date": "2025-02-25T22:16:59.278Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-25T22:19:14.684Z"
+  }
 }]

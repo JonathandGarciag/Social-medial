@@ -1,0 +1,120 @@
+{
+	"info": {
+		"_postman_id": "89492eea-b9bb-4940-a139-fc79b3d37657",
+		"name": "Posteo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38078627"
+	},
+	"item": [
+		{
+			"name": "Post Posteo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I1MzYyNTdlYTlmMzNkNjgzOWM5OTUiLCJpYXQiOjE3NDA1MTkxODMsImV4cCI6MTc0MDUyMjc4M30.zIO24G4WNbDC6c5oAKz1G575yGOF84OzgYGFNvFBCHI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Leyenda\",\r\n    \"category\": \"Juegos\",\r\n    \"content\": \"Alguien sabe como se pasa esta parte del juego?\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/social-media/v3/posts/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"social-media",
+						"v3",
+						"posts",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Posteo",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Posteo",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I1MzYyNTdlYTlmMzNkNjgzOWM5OTUiLCJpYXQiOjE3NDA1MTkxODMsImV4cCI6MTc0MDUyMjc4M30.zIO24G4WNbDC6c5oAKz1G575yGOF84OzgYGFNvFBCHI",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/social-media/v3/posts/67be3de73c8331d94b3017a5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"social-media",
+						"v3",
+						"posts",
+						"67be3de73c8331d94b3017a5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put Posteo",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I1MzYyNTdlYTlmMzNkNjgzOWM5OTUiLCJpYXQiOjE3NDA1MTkxODMsImV4cCI6MTc0MDUyMjc4M30.zIO24G4WNbDC6c5oAKz1G575yGOF84OzgYGFNvFBCHI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"La la land\",\r\n    \"category\": \"General\",\r\n    \"content\": \"Alguien sabe quien interpreto la pelicula de La  la land?\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/social-media/v3/posts/67be3eaf3c8331d94b3017af",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"social-media",
+						"v3",
+						"posts",
+						"67be3eaf3c8331d94b3017af"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

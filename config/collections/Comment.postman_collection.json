@@ -1,0 +1,166 @@
+{
+	"info": {
+		"_postman_id": "6c6bd8fc-80b1-4938-a4cc-ce6ba97ade2c",
+		"name": "Comment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38078627"
+	},
+	"item": [
+		{
+			"name": "Post Comment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I0YjIzNDQxNWFiYzRmYmQ3YWFhNjIiLCJpYXQiOjE3NDA1MjEzNTIsImV4cCI6MTc0MDUyNDk1Mn0.SO4xK7Ix2xaIkTpcbwq-7spP4zI6hqGVHqjGXxQhOio",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"post\": \"God Of War\",\r\n    \"content\": \"Es Emma Stone y Ryan Gosling\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/social-media/v3/comment/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"social-media",
+						"v3",
+						"comment",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Comment",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Put Comment",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I0YjIzNDQxNWFiYzRmYmQ3YWFhNjIiLCJpYXQiOjE3NDA1MjEzNTIsImV4cCI6MTc0MDUyNDk1Mn0.SO4xK7Ix2xaIkTpcbwq-7spP4zI6hqGVHqjGXxQhOio",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"content\": \"Los actrices principales son Emma Stone y Ryan Gosling\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/social-media/v3/comment/67be3fcc3c8331d94b3017ba",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"social-media",
+						"v3",
+						"comment",
+						"67be3fcc3c8331d94b3017ba"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Comment",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I1MzYyNTdlYTlmMzNkNjgzOWM5OTUiLCJpYXQiOjE3NDA1MTkxODMsImV4cCI6MTc0MDUyMjc4M30.zIO24G4WNbDC6c5oAKz1G575yGOF84OzgYGFNvFBCHI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/social-media/v3/comment/67be415b3c8331d94b3017ce",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"social-media",
+						"v3",
+						"comment",
+						"67be415b3c8331d94b3017ce"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Comment a Comment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I1MzYyNTdlYTlmMzNkNjgzOWM5OTUiLCJpYXQiOjE3NDA1MTkxODMsImV4cCI6MTc0MDUyMjc4M30.zIO24G4WNbDC6c5oAKz1G575yGOF84OzgYGFNvFBCHI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"post\": \"La la land\",\r\n    \"content\": \"Gracias por decirme\",\r\n    \"parentComment\": \"67be40fc3c8331d94b3017c6\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/social-media/v3/comment/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"social-media",
+						"v3",
+						"comment",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

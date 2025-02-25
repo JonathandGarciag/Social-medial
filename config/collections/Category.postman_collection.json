@@ -1,0 +1,99 @@
+{
+	"info": {
+		"_postman_id": "65b59d1e-a4a3-45fc-ba74-08bc92250bbe",
+		"name": "Category",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38078627"
+	},
+	"item": [
+		{
+			"name": "Get Category",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Post Category",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I2NjAzZjVjNTNjYmEzZDFiMmJjZTAiLCJpYXQiOjE3NDA1MTg4MTIsImV4cCI6MTc0MDUyMjQxMn0.1PwjvMJs8CCgBdYp70rrl0JOdNGXDGveLUnwY7toFhw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Gastronomia\",\r\n    \"description\": \"Platos y preparaciones\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/social-media/v3/categories",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"social-media",
+						"v3",
+						"categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put Category",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I2NjAzZjVjNTNjYmEzZDFiMmJjZTAiLCJpYXQiOjE3NDA1MTg4MTIsImV4cCI6MTc0MDUyMjQxMn0.1PwjvMJs8CCgBdYp70rrl0JOdNGXDGveLUnwY7toFhw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Gastronomia\",\r\n    \"description\": \"Platos, preparaciones y novedades\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/social-media/v3/categories/67be42733c8331d94b3017d7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"social-media",
+						"v3",
+						"categories",
+						"67be42733c8331d94b3017d7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Category",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
