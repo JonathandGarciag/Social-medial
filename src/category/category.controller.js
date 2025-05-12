@@ -1,41 +1,23 @@
 import { response } from "express";
 import Category from "./category.model.js";
 import Posteo from "../posteo/posteo.model.js"; 
-import jwt from "jsonwebtoken";
 
-export const createCategory = async (req, res = response) => {
+const createDefaultCategory = async () => {
     try {
-        if (!req.user || req.user.role !== "ADMIN_ROLE") {
-            return res.status(403).json({
-                success: false,
-                msg: "No tienes permisos para realizar esta acción",
+        const existingCategory = await Category.findOne({ name: "General" });
+
+        if (!existingCategory) {
+            const defaultCategory = new Category({
+                name: "General",
+                description: "Categoría predeterminada",
+                isDefault: true
             });
+
+            await defaultCategory.save();
+            console.log(" -> Categoría por defecto creada correctamente.");
         }
-
-        const { name, description } = req.body;
-
-        const categoryExists = await Category.findOne({ name });
-        if (categoryExists) {
-            return res.status(400).json({
-                success: false,
-                msg: "La categoría ya existe",
-            });
-        }
-
-        const category = new Category({ name, description });
-        await category.save();
-
-        res.status(201).json({
-            success: true,
-            msg: "Categoría creada correctamente",
-            category,
-        });
     } catch (error) {
-        console.error("Error en createCategory:", error);
-        res.status(500).json({
-            success: false,
-            msg: "Error al crear categoría",
-        });
+        console.error(" -> Error al crear la categoría por defecto:", error);
     }
 };
 
@@ -56,16 +38,6 @@ export const getCategories = async (req, res = response) => {
 
 export const updateCategory = async (req, res = response) => {
     try {
-        const token = req.header("x-token");
-        if (!token) {
-            return res.status(401).json({ msg: "No hay token en la petición" });
-        }
-
-        const { uid } = jwt.verify(token, process.env.SECRETORPRIVATEKEY);
-        if (!req.user || req.user.role !== "ADMIN_ROLE") {
-            return res.status(403).json({ msg: "No tienes permisos para realizar esta acción" });
-        }
-
         const { id } = req.params;
         const { name, description } = req.body;
 
@@ -89,57 +61,5 @@ export const updateCategory = async (req, res = response) => {
     } catch (error) {
         console.error("Error en updateCategory:", error);
         res.status(500).json({ success: false, msg: "Error al actualizar categoría" });
-    }
-};
-
-
-export const deleteCategory = async (req, res = response) => {
-    try {
-        const token = req.header("x-token");
-
-        if (!token) {
-            return res.status(401).json({ msg: "No hay token en la petición" });
-        }
-
-        const { uid } = jwt.verify(token, process.env.SECRETORPRIVATEKEY);
-
-        if (!req.user || req.user.role !== "ADMIN_ROLE") {
-            return res.status(403).json({ msg: "No tienes permisos para realizar esta acción" });
-        }
-
-        const { id } = req.params;
-
-        const category = await Category.findById(id);
-        if (!category) {
-            return res.status(404).json({ msg: "Categoría no encontrada" });
-        }
-
-        if (category.isDefault) {
-            return res.status(400).json({
-                success: false,
-                msg: "No puedes deshabilitar la categoría por defecto",
-            });
-        }
-
-        const defaultCategory = await Category.findOne({ isDefault: true });
-        if (!defaultCategory) {
-            return res.status(500).json({ msg: "No se encontró la categoría por defecto" });
-        }
-
-        await Posteo.updateMany(
-            { category: id },
-            { category: defaultCategory._id, categoryName: defaultCategory.name }
-        );
-
-        await Category.findByIdAndUpdate(id, { status: false });
-
-        res.status(200).json({
-            success: true,
-            msg: "Categoría deshabilitada correctamente y publicaciones reasignadas a la categoría 'General'.",
-        });
-
-    } catch (error) {
-        console.error("Error en deleteCategory:", error);
-        res.status(500).json({ success: false, msg: "Error al deshabilitar categoría" });
     }
 };

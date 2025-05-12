@@ -2,18 +2,15 @@ import { Schema, model } from "mongoose";
 import { preventDefaultCategoryDeletion } from "../middleware/category-default.js";
 
 const categorySchema = new Schema({
-    name: { 
+    category: { 
         type: String, 
+        enum: ['Taller', 'Tecnologia', 'Practica'],
         required: true, 
         unique: true 
     },
     description: { 
         type: String, 
         required: false 
-    },
-    isDefault: { 
-        type: Boolean, 
-        default: false 
     },
     status: { 
         type: Boolean, 

@@ -10,31 +10,5 @@ router.get(
     getCategories
 );
 
-router.post(
-    "/", 
-    [
-        validarJWT, 
-        validarAdminRole
-    ], 
-    createCategory
-);
-
-router.put(
-    "/:id", 
-    [
-        validarJWT, 
-        validarAdminRole
-    ], 
-    updateCategory
-);
-
-router.delete(
-    "/:id", 
-    [
-        validarJWT, 
-        validarAdminRole
-    ], 
-    deleteCategory
-);
 
 export default router;

@@ -42,27 +42,6 @@ const conectarDB = async () =>{
     }
 }
 
-const createDefaultCategory = async () => {
-    try {
-        const existingCategory = await Category.findOne({ name: "General" });
-
-        if (!existingCategory) {
-            const defaultCategory = new Category({
-                name: "General",
-                description: "Categoría predeterminada",
-                isDefault: true
-            });
-
-            await defaultCategory.save();
-            console.log(" -> Categoría por defecto creada correctamente.");
-        } else {
-            console.log(" -> La categoría por defecto ya existe.");
-        }
-    } catch (error) {
-        console.error(" -> Error al crear la categoría por defecto:", error);
-    }
-};
-
 const createAdmin = async () => {
     try {
         const aEmail = "jgarciadmin@gmail.com";
@@ -82,8 +61,6 @@ const createAdmin = async () => {
 
             await aUser.save();
             console.log(" -> Usuario ADMIN creado correctamente.");
-        } else {
-            console.log(" -> Ya existe un usuario ADMIN.");
         }
     } catch (err) {
         console.error(" -> Error al crear el admin por defecto:", err);
