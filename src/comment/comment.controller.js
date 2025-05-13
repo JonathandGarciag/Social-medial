@@ -1,44 +1,53 @@
 import { response } from "express";
 import Comment from "./comment.model.js";
 import Posteo from "../posteo/posteo.model.js";
-import jwt from "jsonwebtoken";
 
 export const createComment = async (req, res = response) => {
     try {
-        const token = req.header("x-token");
-        if (!token) {
-            return res.status(401).json({ msg: "No hay token en la petición" });
-        }
+        const { content, post, parentComment } = req.body;
+        const name = req.user?.username || "Unidentified_User";
+        const userId = req.user?._id;
 
-        const { uid } = jwt.verify(token, process.env.SECRETORPRIVATEKEY);
-        const { post, content, parentComment } = req.body;
-
-        const postFound = await Posteo.findOne({ title: post });
-        if (!postFound) {
-            return res.status(400).json({ msg: "El post ingresado no existe" });
-        }
-
-        if (parentComment) {
-            const parentExists = await Comment.findById(parentComment);
-            if (!parentExists) {
-                return res.status(400).json({ msg: "El comentario al que intentas responder no existe" });
-            }
-        }
+        const postFound = await Posteo.findOne({ title: post }).populate("author");
 
         const newComment = new Comment({
             post: postFound._id,
-            author: uid,
+            name,
             content,
-            parentComment: parentComment || null 
+            parentComment: parentComment || null,
         });
 
         await newComment.save();
+
+        if (userId) {
+            if (parentComment) {
+                const parent = await Comment.findById(parentComment);
+                const authorUser = await User.findOne({ username: parent.name });
+
+                if (authorUser && authorUser._id.toString() !== userId.toString()) {
+                    await Notification.create({
+                        user: authorUser._id,
+                        type: "comment_reply",
+                        referenceId: parent._id
+                    });
+                }
+            } else {
+                if (postFound.author && postFound.author._id.toString() !== userId.toString()) {
+                    await Notification.create({
+                        user: postFound.author._id,
+                        type: "post_reply",
+                        referenceId: postFound._id
+                    });
+                }
+            }
+        }
 
         res.status(201).json({
             success: true,
             msg: "Comentario creado correctamente",
             comment: newComment,
         });
+
     } catch (error) {
         console.error("Error en createComment:", error);
         res.status(500).json({ success: false, msg: "Error al crear el comentario" });
@@ -95,84 +104,5 @@ export const getComments = async (req, res = response) => {
     } catch (error) {
         console.error("Error en getComments:", error);
         res.status(500).json({ success: false, msg: "Error al obtener los comentarios" });
-    }
-};
-
-
-
-export const updateComment = async (req, res = response) => {
-    try {
-        const token = req.header("x-token");
-        if (!token) {
-            return res.status(401).json({ msg: "No hay token en la petición" });
-        }
-
-        const { uid } = jwt.verify(token, process.env.SECRETORPRIVATEKEY);
-        const { id } = req.params;
-        const { content } = req.body;
-
-        const comment = await Comment.findById(id);
-        if (!comment) {
-            return res.status(404).json({ msg: "Comentario no encontrado" });
-        }
-
-        if (!comment.status) {
-            return res.status(400).json({ msg: "No puedes editar un comentario deshabilitado" });
-        }
-
-        if (comment.author.toString() !== uid) {
-            return res.status(403).json({ msg: "No tienes permiso para editar este comentario" });
-        }
-
-        comment.content = content;
-        comment.updatedAt = new Date();
-        await comment.save();
-
-        res.status(200).json({
-            success: true,
-            msg: "Comentario actualizado correctamente",
-            comment,
-        });
-
-    } catch (error) {
-        console.error("Error en updateComment:", error);
-        res.status(500).json({ success: false, msg: "Error al actualizar el comentario" });
-    }
-};
-
-
-export const deleteComment = async (req, res = response) => {
-    try {
-        const token = req.header("x-token");
-        if (!token) {
-            return res.status(401).json({ msg: "No hay token en la petición" });
-        }
-
-        const { uid } = jwt.verify(token, process.env.SECRETORPRIVATEKEY);
-        const { id } = req.params;
-
-        const comment = await Comment.findById(id);
-        if (!comment) {
-            return res.status(404).json({ msg: "Comentario no encontrado" });
-        }
-
-        if (!comment.status) {
-            return res.status(400).json({ msg: "El comentario ya está deshabilitado" });
-        }
-
-        if (comment.author.toString() !== uid) {
-            return res.status(403).json({ msg: "No tienes permiso para eliminar este comentario" });
-        }
-
-        await Comment.findByIdAndUpdate(id, { status: false, updatedAt: new Date() });
-
-        res.status(200).json({
-            success: true,
-            msg: "Comentario deshabilitado correctamente",
-        });
-
-    } catch (error) {
-        console.error("Error en deleteComment:", error);
-        res.status(500).json({ success: false, msg: "Error al deshabilitar el comentario" });
     }
 };

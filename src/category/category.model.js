@@ -1,5 +1,4 @@
 import { Schema, model } from "mongoose";
-import { preventDefaultCategoryDeletion } from "../middleware/category-default.js";
 
 const categorySchema = new Schema({
     category: { 
@@ -21,7 +20,5 @@ const categorySchema = new Schema({
     timestamps: true,
     versionKey: false
 });
-
-categorySchema.pre("findOneAndDelete", preventDefaultCategoryDeletion);
 
 export default model('Category', categorySchema);

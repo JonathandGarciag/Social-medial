@@ -5,6 +5,11 @@ const RoleSchema = mongoose.Schema({
         type: String,
         required: [true, 'El rol es obligatorio'],
     }
-});
+},
+    {
+        timestamps: true,
+        versionKey: false
+    }
+);
 
 export default mongoose.model('Role', RoleSchema);

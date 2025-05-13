@@ -6,8 +6,10 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 import argon2 from "argon2";
 import { dbConnection } from './mongo.js';
+import { createDefaultRoles } from '../src/role/role.seed.js';
+import { createDefaultCategories } from '../src/category/category.controller.js';
+
 import limiter from '../src/middleware/validar-cant-peticiones.js'
-import Category from '../src/category/category.model.js';
 import User from '../src/user/user.model.js';
 import authRoutes from '../src/auth/auth.routes.js'
 import userRoutes from '../src/user/user.routes.js'
@@ -75,8 +77,9 @@ export const initServer = async () =>{
         middlewares(app);
         conectarDB();
         routes(app);
-        await createDefaultCategory();  
+        await createDefaultCategories();  
         await createAdmin();  
+        await createDefaultRoles();
         app.listen(port);
         console.log(`Server running on port ${port}`)
     } catch (err) {

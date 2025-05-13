@@ -1,29 +1,18 @@
 import { response } from "express";
 import Posteo from "./posteo.model.js";
 import Category from "../category/category.model.js";
-import jwt from "jsonwebtoken";
+import Comment from "../comment/comment.model.js"; 
 
 export const createPost = async (req, res = response) => {
     try {
-        const token = req.header("x-token");
-        if (!token) {
-            return res.status(401).json({ msg: "No hay token en la petición" });
-        }
-
-        const { uid } = jwt.verify(token, process.env.SECRETORPRIVATEKEY);
-
-        const { title, category, content } = req.body;  
-
-        const categoryFound = await Category.findOne({ name: category });
-        if (!categoryFound) {
-            return res.status(400).json({ msg: "La categoría ingresada no existe" });
-        }
+        const { title, content } = req.body;
+        const { categoryId } = req;
 
         const newPost = new Posteo({
             title,
-            category: categoryFound._id,  
+            category: categoryId,
             content,
-            author: uid
+            author: req.user._id,
         });
 
         await newPost.save();
@@ -31,7 +20,7 @@ export const createPost = async (req, res = response) => {
         res.status(201).json({
             success: true,
             msg: "Publicación creada correctamente",
-            post: newPost
+            post: newPost,
         });
 
     } catch (error) {
@@ -40,18 +29,82 @@ export const createPost = async (req, res = response) => {
     }
 };
 
-export const getPosts = async (req, res = response) => {
+export const getPostsFiltered = async (req, res = response) => {
     try {
-        const posts = await Posteo.find()
-            .populate("category", "name") 
-            .populate("author", "name"); 
+        const { category, sort } = req.query;
+
+        if (sort === "popularidad") {
+            const matchStage = {};
+
+            if (category) {
+                const cat = await Category.findOne({ category });
+                if (cat) matchStage.category = cat._id;
+            }
+
+            const posts = await Posteo.aggregate([
+                { $match: matchStage },
+                {
+                    $lookup: {
+                        from: "comments",
+                        localField: "_id",
+                        foreignField: "post",
+                        as: "comments"
+                    }
+                },
+                {
+                    $addFields: {
+                        totalComments: { $size: "$comments" }
+                    }
+                },
+                {
+                    $sort: { totalComments: -1 }
+                }
+            ]);
+
+            const populatedPosts = await Posteo.populate(posts, [
+                { path: "category", select: "category" },
+                { path: "author", select: "name" }
+            ]);
+
+            const formattedPosts = populatedPosts.map(post => ({
+                _id: post._id,
+                title: post.title,
+                category: post.category?.category || "Sin categoría",
+                content: post.content,
+                author: post.author?.name || "Anónimo",
+                totalComments: post.totalComments || 0,
+                createdAt: post.createdAt,
+                updatedAt: post.updatedAt
+            }));
+
+            return res.status(200).json({
+                success: true,
+                total: formattedPosts.length,
+                posts: formattedPosts
+            });
+        }
+
+        const filter = {};
+        if (category) {
+            const cat = await Category.findOne({ category });
+            if (cat) filter.category = cat._id;
+        }
+
+        let sortOption = { createdAt: -1 };
+        if (sort === "curso") sortOption = { category: 1 };
+        else if (sort === "titulo") sortOption = { title: 1 };
+
+        const posts = await Posteo.find(filter)
+            .sort(sortOption)
+            .populate("category", "category")
+            .populate("author", "name");
 
         const formattedPosts = posts.map(post => ({
             _id: post._id,
             title: post.title,
-            category: post.category.name, 
+            category: post.category?.category,
             content: post.content,
-            author: post.author.name,
+            author: post.author?.name,
             createdAt: post.createdAt,
             updatedAt: post.updatedAt
         }));
@@ -63,78 +116,46 @@ export const getPosts = async (req, res = response) => {
         });
 
     } catch (error) {
-        console.error("Error en getPosts:", error);
-        res.status(500).json({ success: false, msg: "Error al obtener publicaciones" });
+        console.error("Error en getPostsFiltered:", error);
+        res.status(500).json({
+            success: false,
+            msg: "Error al obtener publicaciones",
+            error: error.message
+        });
     }
 };
 
 
-export const updatePost = async (req, res = response) => {
+export const getPostById = async (req, res) => {
     try {
-        const token = req.header("x-token");
-        if (!token) {
-            return res.status(401).json({ msg: "No hay token en la petición" });
-        }
-
-        const { uid } = jwt.verify(token, process.env.SECRETORPRIVATEKEY);
-
         const { id } = req.params;
-        const { title, category, content } = req.body;
 
-        const post = await Posteo.findById(id);
+        const post = await Posteo.findById(id)
+            .populate("category", "category")
+            .populate("author", "name");
+
         if (!post) {
             return res.status(404).json({ msg: "Publicación no encontrada" });
         }
 
-        if (post.author.toString() !== uid) {
-            return res.status(403).json({ msg: "No tienes permiso para editar esta publicación" });
-        }
-
-        let categoryToUpdate = post.category;
-
-        if (category) {
-            const categoryFound = await Category.findOne({ name: category });
-            if (!categoryFound) {
-                return res.status(400).json({ msg: "La categoría seleccionada no existe" });
-            }
-            categoryToUpdate = categoryFound._id;
-        }
-
-        const updatedPost = await Posteo.findByIdAndUpdate(
-            id,
-            { title, category: categoryToUpdate, content },
-            { new: true }
-        ).populate("category", "name") 
-         .populate("author", "name");
+        const comments = await Comment.find({ post: id })
+            .sort({ createdAt: -1 })
+            .lean();
 
         res.status(200).json({
             success: true,
-            msg: "Publicación actualizada correctamente",
-            post: {
-                _id: updatedPost._id,
-                title: updatedPost.title,
-                category: updatedPost.category.name,
-                content: updatedPost.content,
-                author: updatedPost.author.name,
-                createdAt: updatedPost.createdAt,
-                updatedAt: updatedPost.updatedAt
-            }
+            post,
+            comments
         });
 
     } catch (error) {
-        console.error("Error en updatePost:", error);
-        res.status(500).json({ success: false, msg: "Error al actualizar la publicación" });
+        console.error("Error en getPostById:", error);
+        res.status(500).json({ msg: "Error al obtener la publicación" });
     }
 };
 
 export const deletePost = async (req, res = response) => {
     try {
-        const token = req.header("x-token");
-        if (!token) {
-            return res.status(401).json({ msg: "No hay token en la petición" });
-        }
-
-        const { uid } = jwt.verify(token, process.env.SECRETORPRIVATEKEY);
         const { id } = req.params;
 
         const post = await Posteo.findById(id);

@@ -1,30 +1,28 @@
 import { Router } from "express";
-import { validarJWT } from "../middleware/validar-jwt.js";
-import { createComment, getComments, updateComment, deleteComment } from "./comment.controller.js";
+import { check } from "express-validator";
+import { validarJWTOpcional } from "../middleware/validar-jwt.js";
+import { createComment, getComments } from "./comment.controller.js";
+import { existeComentarioPorId, existePostPorTitulo } from "../helpers/db-validator.js";
+import { validarCampos } from "../middleware/validar-campos.js";
 
 const router = Router();
 
 router.post(
-    "/", 
-    validarJWT, 
+    "/",
+    [
+        check("post", "El título del post es obligatorio").notEmpty(),
+        check("post").custom(existePostPorTitulo),
+        check("content", "El contenido no puede estar vacío").notEmpty(),
+        check("parentComment").optional().custom(existeComentarioPorId),
+        validarJWTOpcional,
+        validarCampos
+    ],
     createComment
 );
 
 router.get(
     "/", 
     getComments
-);
-
-router.put(
-    "/:id", 
-    validarJWT, 
-    updateComment
-);
-
-router.delete(
-    "/:id", 
-    validarJWT, 
-    deleteComment
 );
 
 export default router;

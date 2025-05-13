@@ -1,37 +1,91 @@
 import { response } from "express";
+import { query } from "express-validator";
 import Category from "./category.model.js";
-import Posteo from "../posteo/posteo.model.js"; 
 
-const createDefaultCategory = async () => {
+export const createDefaultCategories = async () => {
+    const categories = [
+        { category: "Practica", description: "Categoría de práctica" },
+        { category: "Taller", description: "Categoría de taller" },
+        { category: "Tecnologia", description: "Categoría de tecnología" }
+    ];
+
     try {
-        const existingCategory = await Category.findOne({ name: "General" });
+        for (const cat of categories) {
+            const existingCategory = await Category.findOne({ category: cat.category });
 
-        if (!existingCategory) {
-            const defaultCategory = new Category({
-                name: "General",
-                description: "Categoría predeterminada",
-                isDefault: true
-            });
-
-            await defaultCategory.save();
-            console.log(" -> Categoría por defecto creada correctamente.");
+            if (!existingCategory) {
+                const newCategory = new Category(cat);
+                await newCategory.save();
+                console.log(` -> Categoría '${cat.category}' creada correctamente.`);
+            } 
         }
     } catch (error) {
-        console.error(" -> Error al crear la categoría por defecto:", error);
+        console.error(" -> Error al crear las categorías por defecto:", error);
     }
 };
 
-export const getCategories = async (req, res = response) => {
+export const getCategories = async (req, res) => {
     try {
-        const categories = await Category.find({ status: true });
+        const query = { status: true };
 
-        res.status(200).json({
+        return res.status(200).json({
             success: true,
-            categories,
+            total,
+            categories
         });
+
     } catch (error) {
         console.error("Error en getCategories:", error);
-        res.status(500).json({ success: false, msg: "Error al obtener categorías" });
+        return res.status(500).json({
+            success: false,
+            msg: "Error al obtener categorías",
+            error: error.message
+        });
+    }
+};
+
+export const getCategoryById = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const category = await Category.findById(id).select('category description status');
+
+        return res.status(200).json({
+            success: true,
+            category
+        });
+    } catch (error) {
+        console.error("Error en getCategoryById:", error);
+        return res.status(500).json({
+            success: false,
+            msg: "Error al obtener la categoría",
+            error: error.message
+        });
+    }
+};
+
+export const getCategoriesFiltered = async (req, res) => {
+    try {
+        const { category } = req.query;
+
+        const query = {
+            status: true,
+            ...(category && { category: { $regex: category, $options: 'i' } }) 
+        };
+
+        const categories = await Category.find(query).select('category description status');
+
+        return res.status(200).json({
+            success: true,
+            categories
+        });
+
+    } catch (error) {
+        console.error("Error en getCategoriesFiltered:", error);
+        return res.status(500).json({
+            success: false,
+            msg: "Error al filtrar categorías",
+            error: error.message
+        });
     }
 };
 

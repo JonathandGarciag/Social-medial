@@ -41,3 +41,28 @@ export const validarJWT = async (req, res, next) => {
     }
 };
 
+export const validarJWTOpcional = async (req, res, next) => {
+    const token = req.header("x-token");
+
+    if (!token) {
+        req.user = null;
+        return next(); 
+    }
+
+    try {
+        const { uid } = jwt.verify(token, process.env.SECRETORPRIVATEKEY);
+        const user = await User.findById(uid);
+
+        if (!user || !user.status) {
+            req.user = null;
+        } else {
+            req.user = user;
+        }
+
+        next();
+    } catch (error) {
+        console.warn("Token inválido:", error.message);
+        req.user = null;
+        next();
+    }
+};

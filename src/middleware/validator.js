@@ -17,3 +17,4 @@ export const loginValidator = [
     body("password", "La contraseña debe tener minimo 8 caracteres").isLength({min: 8}),
     validarCampos
 ];
+
