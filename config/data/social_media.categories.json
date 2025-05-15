@@ -1,180 +1,42 @@
 [{
   "_id": {
-    "$oid": "67b65ea95df44cbbb12e149e"
+    "$oid": "6822acfb24ef819de5dcfe6e"
   },
-  "name": "General",
-  "description": "Categoría predeterminada",
-  "isDefault": true,
+  "category": "Practica",
+  "description": "Categoría de práctica",
   "status": true,
   "createdAt": {
-    "$date": "2025-02-19T22:43:53.372Z"
+    "$date": "2025-05-13T02:22:51.871Z"
   },
   "updatedAt": {
-    "$date": "2025-02-19T22:43:53.372Z"
+    "$date": "2025-05-13T02:22:51.871Z"
   }
 },
 {
   "_id": {
-    "$oid": "67b68b4aa95770c69ecae1d5"
+    "$oid": "6822acfb24ef819de5dcfe72"
   },
-  "name": "Tecnología en computación",
-  "description": "Investigaciones y avances científicos",
-  "isDefault": false,
+  "category": "Taller",
+  "description": "Categoría de taller",
   "status": true,
   "createdAt": {
-    "$date": "2025-02-20T01:54:18.592Z"
+    "$date": "2025-05-13T02:22:51.982Z"
   },
   "updatedAt": {
-    "$date": "2025-02-20T03:01:49.088Z"
+    "$date": "2025-05-13T02:22:51.982Z"
   }
 },
 {
   "_id": {
-    "$oid": "67b68cc39e657a342d731927"
+    "$oid": "6822acfb24ef819de5dcfe75"
   },
-  "name": "Biología",
-  "description": "Categoría sobre avances biologicos",
-  "isDefault": false,
+  "category": "Tecnologia",
+  "description": "Categoría de tecnología",
   "status": true,
   "createdAt": {
-    "$date": "2025-02-20T02:00:35.408Z"
+    "$date": "2025-05-13T02:22:51.993Z"
   },
   "updatedAt": {
-    "$date": "2025-02-20T02:00:35.408Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67b6c2a5e9e0c01b486aa361"
-  },
-  "name": "Quimica y Ciencia",
-  "description": "Investigaciones y avances Quimicos",
-  "isDefault": false,
-  "status": true,
-  "createdAt": {
-    "$date": "2025-02-20T05:50:29.035Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-21T02:55:28.594Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67b6c2c7e9e0c01b486aa365"
-  },
-  "name": "Animales",
-  "description": "Categoria sobre animales de todo tipo",
-  "isDefault": false,
-  "status": true,
-  "createdAt": {
-    "$date": "2025-02-20T05:51:03.518Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-20T05:51:03.518Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67b6c2dde9e0c01b486aa369"
-  },
-  "name": "Espacio",
-  "description": "Categoria sobre el basto espacio",
-  "isDefault": false,
-  "status": true,
-  "createdAt": {
-    "$date": "2025-02-20T05:51:25.195Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-20T05:51:25.195Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67b6c310e9e0c01b486aa371"
-  },
-  "name": "Questions",
-  "description": "Resuelve tus dudas aquí",
-  "isDefault": false,
-  "status": true,
-  "createdAt": {
-    "$date": "2025-02-20T05:52:16.998Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-20T05:52:16.998Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67b6c333e9e0c01b486aa375"
-  },
-  "name": "Juegos",
-  "description": "Juegos que te pueden atraer",
-  "isDefault": false,
-  "status": true,
-  "createdAt": {
-    "$date": "2025-02-20T05:52:51.598Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-20T05:52:51.598Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67b6c340e9e0c01b486aa379"
-  },
-  "name": "Tendencias",
-  "description": "Tendencias de ultimo momento",
-  "isDefault": false,
-  "status": true,
-  "createdAt": {
-    "$date": "2025-02-20T05:53:04.288Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-20T05:53:04.288Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67b7a87151659ca03aa413f4"
-  },
-  "name": "Delete",
-  "description": "Ejemplo del delete",
-  "isDefault": false,
-  "status": false,
-  "createdAt": {
-    "$date": "2025-02-20T22:10:57.106Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-20T22:16:01.308Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67b7eb3273a60f67da6b33c1"
-  },
-  "name": "Delete prueba",
-  "description": "Ejemplo del delete",
-  "isDefault": false,
-  "status": false,
-  "createdAt": {
-    "$date": "2025-02-21T02:55:46.441Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-21T02:57:25.477Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67be42733c8331d94b3017d7"
-  },
-  "name": "Gastronomia",
-  "description": "Platos, preparaciones y novedades",
-  "isDefault": false,
-  "status": false,
-  "createdAt": {
-    "$date": "2025-02-25T22:21:39.873Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-25T22:23:46.685Z"
+    "$date": "2025-05-13T02:22:51.993Z"
   }
 }]

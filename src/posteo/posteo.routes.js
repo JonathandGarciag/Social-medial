@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { check, query } from "express-validator";
 import { validarJWT } from "../middleware/validar-jwt.js";
-import { createPost, getPostsFiltered, getPostById, deletePost } from "./posteo.controller.js";
+import { createPost, getPostsFiltered, getPostById, deletePost, updatePost, getPostsByTitle } from "./posteo.controller.js";
 import { existeCategoriaPorNombre, existePostById } from "../helpers/db-validator.js";
 import { validarCampos } from "../middleware/validar-campos.js";
 
@@ -9,16 +9,14 @@ const router = Router();
 
 router.get(
     "/",
-    [
-        query("category").optional().custom(existeCategoriaPorNombre),
-        query("sort")
-            .optional()
-            .isIn(["fecha", "curso", "titulo", "popularidad"])
-            .withMessage("Parámetro 'sort' inválido"),
-        validarCampos
-    ],
     getPostsFiltered
 );
+
+router.get(
+    "/search-by-title", 
+    getPostsByTitle
+);
+
 
 router.get(
     "/:id", 
@@ -33,10 +31,9 @@ router.get(
 router.post(
     "/",
     [
-        validarJWT,
         check("title", "El título es obligatorio").notEmpty(),
         check("content", "El contenido es obligatorio").notEmpty(),
-        check("category").custom(existeCategoriaPorNombre),
+        check("category", "La categoría es obligatoria").notEmpty(),
         validarCampos
     ],
     createPost
@@ -45,11 +42,24 @@ router.post(
 router.delete(
     "/:id", 
     [
-        validarJWT,
         check("id").custom(existePostById),
     ], 
     deletePost
 );
+
+router.put(
+  "/:id",
+  [
+    check("id").isMongoId(),
+    check("id").custom(existePostById),
+    check("title", "El título es obligatorio").notEmpty(),
+    check("content", "El contenido es obligatorio").notEmpty(),
+    check("category", "La categoría es obligatoria").notEmpty(),
+    validarCampos
+  ],
+  updatePost
+);
+
 
 
 export default router;

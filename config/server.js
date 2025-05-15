@@ -31,7 +31,7 @@ const routes = (app) =>{
     app.use("/social-media/v3/user", userRoutes);
     app.use("/social-media/v3/categories", categoryRoutes);
     app.use("/social-media/v3/posts", postsRoutes);
-    app.use("/social-media/v3/comment", commentRoutes);
+    app.use("/social-media/v3/comments", commentRoutes);
 }
 
 const conectarDB = async () =>{

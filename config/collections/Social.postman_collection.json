@@ -1,0 +1,101 @@
+{
+	"info": {
+		"_postman_id": "175fcb17-0db7-40b3-8832-c4732ca364b3",
+		"name": "Social",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42619043"
+	},
+	"item": [
+		{
+			"name": "Post Post",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODE5MmI5MGJlM2ZjYWM0ZTkyZjUxNDgiLCJpYXQiOjE3NDY2NjUxMTUsImV4cCI6MTc0NjY2ODcxNX0.UxFL11-WPXFUGOqXzTCqTEEaMuhHM64vTbcCXyaeaqc",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Conexion de datos\",\r\n  \"content\": \"Se puede pasar data de una base de datos a otro?\",\r\n  \"author\": \"Javier\",\r\n  \"category\": \"Practica\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/social-media/v3/posts/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"social-media",
+						"v3",
+						"posts",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put Post",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Redes - VLAN Avanzadas\",\r\n  \"content\": \"Se configuraron VLANs con enlaces troncales y VTP.\",\r\n  \"author\": \"Kevin\",\r\n  \"category\": \"Taller\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/social-media/v3/posts/682536cb5b0daed380cc95c3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"social-media",
+						"v3",
+						"posts",
+						"682536cb5b0daed380cc95c3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Post",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/social-media/v3/posts/682537625b0daed380cc95cf",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"social-media",
+						"v3",
+						"posts",
+						"682537625b0daed380cc95cf"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

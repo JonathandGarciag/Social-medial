@@ -1,160 +1,144 @@
 [{
   "_id": {
-    "$oid": "67b6b6662c74dae4fde80ccc"
+    "$oid": "682536cb5b0daed380cc95c3"
   },
-  "title": "Actualización en IA",
+  "title": "Redes - VLAN Avanzadas",
   "category": {
-    "$oid": "67b68b4aa95770c69ecae1d5"
+    "$oid": "6822acfb24ef819de5dcfe72"
   },
-  "content": "JavaScript sigue evolucionando...",
-  "author": {
-    "$oid": "67b536257ea9f33d6839c995"
-  },
+  "content": "Se configuraron VLANs con enlaces troncales y VTP.",
+  "author": "Kevin",
   "status": true,
   "createdAt": {
-    "$date": "2025-02-20T04:58:14.105Z"
+    "$date": "2025-05-15T00:35:23.483Z"
   },
   "updatedAt": {
-    "$date": "2025-02-20T05:32:22.953Z"
+    "$date": "2025-05-15T22:57:53.802Z"
   }
 },
 {
   "_id": {
-    "$oid": "67b7eb7973a60f67da6b33c6"
+    "$oid": "682537425b0daed380cc95c6"
   },
-  "title": "Pruebas de delete",
+  "title": "Tecnología - Introducción a MongoDB",
   "category": {
-    "$oid": "67b65ea95df44cbbb12e149e"
+    "$oid": "6822acfb24ef819de5dcfe75"
   },
-  "content": "Se hizo para confirmar que al eliminar una categoria se pongo por defecto General",
-  "author": {
-    "$oid": "67b536257ea9f33d6839c995"
+  "content": "Se aprendió a usar MongoDB con Mongoose en un entorno Node.js.",
+  "author": "Kevin",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-15T00:37:22.036Z"
   },
+  "updatedAt": {
+    "$date": "2025-05-15T00:37:22.036Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682537505b0daed380cc95c9"
+  },
+  "title": "Tecnología - API REST con Express",
+  "category": {
+    "$oid": "6822acfb24ef819de5dcfe75"
+  },
+  "content": "Se creó una API RESTful usando Express para manejar rutas y controladores.",
+  "author": "Jose",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-15T00:37:36.322Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-15T00:37:36.322Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6825375a5b0daed380cc95cc"
+  },
+  "title": "Práctica - Consulta avanzada en SQL",
+  "category": {
+    "$oid": "6822acfb24ef819de5dcfe6e"
+  },
+  "content": "Se ejecutaron consultas JOIN y GROUP BY en tablas relacionales.",
+  "author": "Sanchez",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-15T00:37:46.370Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-15T00:37:46.370Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682537625b0daed380cc95cf"
+  },
+  "title": "Práctica - Diagramas ER",
+  "category": {
+    "$oid": "6822acfb24ef819de5dcfe6e"
+  },
+  "content": "Se modelaron relaciones entre entidades para el sistema de biblioteca.",
+  "author": "Pedri",
   "status": false,
   "createdAt": {
-    "$date": "2025-02-21T02:56:57.714Z"
+    "$date": "2025-05-15T00:37:54.730Z"
   },
   "updatedAt": {
-    "$date": "2025-02-21T03:33:48.366Z"
+    "$date": "2025-05-15T22:59:51.820Z"
   }
 },
 {
   "_id": {
-    "$oid": "67b7ed069cee539e6c7743f4"
+    "$oid": "6825376a5b0daed380cc95d2"
   },
-  "title": "Hola soy nuevo",
+  "title": "Taller - Cableado estructurado",
   "category": {
-    "$oid": "67b6c340e9e0c01b486aa379"
+    "$oid": "6822acfb24ef819de5dcfe72"
   },
-  "content": "Quiero saber como se usa esta aplicación",
-  "author": {
-    "$oid": "67b4b234415abc4fbd7aaa62"
-  },
+  "content": "Se hizo la instalación física de red utilizando normas TIA/EIA.",
+  "author": "Tarta",
   "status": true,
   "createdAt": {
-    "$date": "2025-02-21T03:03:34.147Z"
+    "$date": "2025-05-15T00:38:02.580Z"
   },
   "updatedAt": {
-    "$date": "2025-02-21T03:03:34.147Z"
+    "$date": "2025-05-15T00:38:02.580Z"
   }
 },
 {
   "_id": {
-    "$oid": "67b7ed519cee539e6c7743f9"
+    "$oid": "68267349fbde707909db9ac4"
   },
-  "title": "No se cocinar",
+  "title": "Como lo logra eso?",
   "category": {
-    "$oid": "67b6c310e9e0c01b486aa371"
+    "$oid": "6822acfb24ef819de5dcfe75"
   },
-  "content": "Alguien me ayuda a poder cocinar?",
-  "author": {
-    "$oid": "67b4b218415abc4fbd7aaa5c"
-  },
+  "content": "Busco quien me enseñe como se logra instalar dependencias",
+  "author": "Javier",
   "status": true,
   "createdAt": {
-    "$date": "2025-02-21T03:04:49.113Z"
+    "$date": "2025-05-15T23:05:45.362Z"
   },
   "updatedAt": {
-    "$date": "2025-02-21T03:04:49.113Z"
+    "$date": "2025-05-15T23:05:45.362Z"
   }
 },
 {
   "_id": {
-    "$oid": "67b7eda69cee539e6c7743ff"
+    "$oid": "682673a0fbde707909db9ad9"
   },
-  "title": "Meteorito",
+  "title": "Conexion de datos",
   "category": {
-    "$oid": "67b6c2dde9e0c01b486aa369"
+    "$oid": "6822acfb24ef819de5dcfe6e"
   },
-  "content": "Alguien sabe cuando va pasar el meteorito?",
-  "author": {
-    "$oid": "67b4b1cf415abc4fbd7aaa56"
-  },
+  "content": "Se puede pasar data de una base de datos a otro?",
+  "author": "Javier",
   "status": true,
   "createdAt": {
-    "$date": "2025-02-21T03:06:14.727Z"
+    "$date": "2025-05-15T23:07:12.129Z"
   },
   "updatedAt": {
-    "$date": "2025-02-21T03:06:14.727Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67b7fa698bc829b4fe03bc77"
-  },
-  "title": "God Of War",
-  "category": {
-    "$oid": "67b6c333e9e0c01b486aa375"
-  },
-  "content": "Alguien sabe como se pasa esta parte del juego?",
-  "author": {
-    "$oid": "67b4b1cf415abc4fbd7aaa56"
-  },
-  "status": true,
-  "createdAt": {
-    "$date": "2025-02-21T04:00:41.871Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-21T04:00:41.871Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67be3de73c8331d94b3017a5"
-  },
-  "title": "Leyenda",
-  "category": {
-    "$oid": "67b6c333e9e0c01b486aa375"
-  },
-  "content": "Alguien sabe como se pasa esta parte del juego?",
-  "author": {
-    "$oid": "67b536257ea9f33d6839c995"
-  },
-  "status": false,
-  "createdAt": {
-    "$date": "2025-02-25T22:02:15.221Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-25T22:04:47.528Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67be3eaf3c8331d94b3017af"
-  },
-  "title": "La la land",
-  "category": {
-    "$oid": "67b65ea95df44cbbb12e149e"
-  },
-  "content": "Alguien sabe quien interpreto la pelicula de La  la land?",
-  "author": {
-    "$oid": "67b536257ea9f33d6839c995"
-  },
-  "status": true,
-  "createdAt": {
-    "$date": "2025-02-25T22:05:35.460Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-25T22:06:55.385Z"
+    "$date": "2025-05-15T23:07:12.129Z"
   }
 }]

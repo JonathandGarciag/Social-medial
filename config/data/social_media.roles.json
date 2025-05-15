@@ -1,12 +1,24 @@
 [{
   "_id": {
-    "$oid": "67b4a3fca18f39ef523798b2"
+    "$oid": "6822acfc24ef819de5dcfe7c"
   },
-  "role": "ADMIN_ROLE"
+  "role": "ADMIN_ROLE",
+  "createdAt": {
+    "$date": "2025-05-13T02:22:52.123Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-13T02:22:52.123Z"
+  }
 },
 {
   "_id": {
-    "$oid": "67b4a409a18f39ef523798b4"
+    "$oid": "6822acfc24ef819de5dcfe7f"
   },
-  "role": "USER_ROLE"
+  "role": "USER_ROLE",
+  "createdAt": {
+    "$date": "2025-05-13T02:22:52.130Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-13T02:22:52.130Z"
+  }
 }]
